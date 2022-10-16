@@ -1,13 +1,11 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-typedef struct
+typedef struct plh
 {
-	char *percent;
-	char *type;
 	char *symbol;
-	char (*f)(char *str);
-} printer_func ;
+	char *type;
+} plh_t;
 
 int _printf(const char *format, ...);
 #endif
