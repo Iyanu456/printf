@@ -10,16 +10,28 @@
 
 char frmt_func(char *s)
 {
-	int i;
+	int i, b, n;
 
 	char *str;
 
-	plh_t plh[] {
-		{ %, d},
-		{ %, i},
+	plh_t plhs[] {
+		{ %, d, print_char},
+		{ %, i, print_int},
 		{ %, s},
 		{ %, u},
 		{ %, f},
 		{NULL, NULL}
 	};
+	n = 0;
+	while (s != '\0')
+		n++;
+
+	for (i = 0; i < n; i++)
+	{
+		for (b = 0; b < 6; b++)
+		{
+			if (*s[i] == plhs[b].plh[0] & *s[i + 1] == plhs[b].plh[1])
+				return plhs[b].plh[2];
+		}
+	}
 }
