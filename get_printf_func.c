@@ -8,18 +8,17 @@
  * Return: formatted string
  */
 
-char frmt_func(char *s)
+int _printf(const char *format, ...)
 {
 	int i, b, n;
 
 	char *str;
 
 	plh_t plhs[] {
-		{ %, d, print_char},
-		{ %, i, print_int},
-		{ %, s},
-		{ %, u},
-		{ %, f},
+		{ "%", "d", print_dec},
+		{ "%", "s", print_int},
+		{ "%", "f", print_float},
+		{ "%", "x", print_hex},
 		{NULL, NULL}
 	};
 	n = 0;
@@ -30,8 +29,8 @@ char frmt_func(char *s)
 	{
 		for (b = 0; b < 6; b++)
 		{
-			if (*s[i] == plhs[b].plh[0] & *s[i + 1] == plhs[b].plh[1])
-				return plhs[b].plh[2];
+			if (*s[i] == plhs[b].plh[0] && *s[i + 1] == plhs[b].plh[1])
+				return plhs[b].plh[2]();
 		}
 	}
 }
