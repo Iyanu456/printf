@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdarg.h>
 
 /**
  * get_printf_func - get printf function
@@ -8,40 +9,29 @@
  * Return: formatted string
  */
 
-char get_printf_func(char *s)
+int (*get_printf_func(char c))(va_list)
 {
-	int i, n, j = 0, plh_count;
+	int i;
 
-	void *str, **new_str;
-
-	plh_t plhs[] {
-		{ "%", "d", print_dec},
-		{ "%", "s", print_string},
-		{ "%", "f", print_float},
-		{ "%", "x", print_hex},
+	ops print_op[] = {
+		{ 'd', print_char},
+		{ 's', print_string},
+		{ 'f', print_float},
+		{ 'x', print_hex},
+		{ '\0', NULL}
 	};
-	n = 0;
-	plh_count = 0;
-	while (s != '\0')
-		n++;
 
-	str = malloc(sizeof(char) * n);
+	i = 0;
 
-	while (s != '\0')
+	while (print_op[i].symbol)
 	{
-		str[j] = s[j];
-		j++;
-	}
-
-	for (i = 0; i < n; i++)
-	{
-		for (b = 0; b < 4; b++)
+		if (c == print_op[i].symbol)
 		{
-			if (str[i] == plhs[b].plh[0] && str[i + 1] == plhs[b].plh[1])
-				plh_count += 2;
+			return (print_op[i].func);
 		}
+
+		i++;
 	}
 
-	new_string = malloc(sizeof(char) * (n - plh_count + varg_count);
-	return (s);
+	return (NULL);
 }
