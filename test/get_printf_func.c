@@ -9,13 +9,12 @@
  * Return: formatted string
  */
 
-int (*get_printf_func(char c))(va_list)
-{
+int (*get_printf_func)(char *c)(va_list) = {
 	int i;
 
 	ops print_op[] = {
-		{ 'd', print_char},
-		{ 's', print_string},
+		{ 'd', print_dec},
+		{ 's', print_char},
 		{ 'f', print_float},
 		{ 'x', print_hex},
 		{ '\0', NULL}
@@ -25,7 +24,7 @@ int (*get_printf_func(char c))(va_list)
 
 	while (print_op[i].symbol)
 	{
-		if (c == print_op[i].symbol)
+		if (print_op[i].symbol == c)
 		{
 			return (print_op[i].func);
 		}
