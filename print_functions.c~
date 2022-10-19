@@ -1,4 +1,0 @@
-#include <stdlib.h>
-#include "main.h"
-int print_int(char *s)
-{
