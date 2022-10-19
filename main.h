@@ -26,6 +26,7 @@ typedef struct fmt_op fmt_t;
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _isdigit(int c);
+int is_digit(int c);
 
 int handle_print(const char *fmt, int *id, va_list list, char buffer[], int flags, int width, int precision, int size);
 
