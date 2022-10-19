@@ -2,35 +2,39 @@
 #include <stdlib.h>
 
 /**
- * frmt_function - format function
+ * get_printf_func - get printf function
  * @s: strng
- * Description: parases string and replaces placeholders with values
+ * Description: searches for appropriate printf function
  * Return: formatted string
  */
 
-int _printf(const char *format, ...)
+char get_printf_func(char *s)
 {
-	int i, b, n;
+	int i, n, plh_count;
 
-	char *str;
+	void *str;
 
 	plh_t plhs[] {
 		{ "%", "d", print_dec},
-		{ "%", "s", print_int},
+		{ "%", "s", print_string},
 		{ "%", "f", print_float},
 		{ "%", "x", print_hex},
-		{NULL, NULL}
 	};
 	n = 0;
+	plh_count = 0;
 	while (s != '\0')
 		n++;
 
 	for (i = 0; i < n; i++)
 	{
-		for (b = 0; b < 6; b++)
+		for (b = 0; b < 4; b++)
 		{
 			if (*s[i] == plhs[b].plh[0] && *s[i + 1] == plhs[b].plh[1])
-				return plhs[b].plh[2]();
+			{
+				plh_count += 2;
+				i++;
+			}
 		}
 	}
+	return (s);
 }

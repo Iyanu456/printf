@@ -8,4 +8,5 @@ typedef struct plh
 } plh_t;
 
 int _printf(const char *format, ...);
+char get_printf_func(char *s);
 #endif

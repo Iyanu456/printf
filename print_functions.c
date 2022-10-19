@@ -1,16 +1,19 @@
 #include <stdlib.h>
 #include "main.h"
 
-char print_char(char *s)
+char print_string(char *s)
 {
 	char *str;
 
-	int i;
+	int i, n, plh_count;
 
-	i = 0;
+	n = 0;
+	plh_count = 0;
 
 	while (s != '\0')
-		i++;
+		n++;
 
-	str = malloc(sizeof(char) * i);
+	for (i = 0; i < n; i++)
+	{
+		
 }
