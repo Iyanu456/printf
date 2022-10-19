@@ -13,7 +13,7 @@
 #define FL_HASH 8
 #define FL_SPACE 16
 
-/SIZES/
+
 #define S_LONG 2
 #define S_SHORT 1
 
@@ -39,7 +39,9 @@ int print_binary(va_list types, char buffer[], int flags, int width, int precisi
 int print_unsigned(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_hexadecimal(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_octal(va_list types, char buffer[], int flags, int width, int precision, int size);
+int print_hexa_upper(va_list types, char buffer[], int flags, int width, int precision, int size);
 
+int print_pointet(va_list types, char buffer[], int flags, int width, int precision, int size);
 
 int get_flags(const char *format, int *i);
 int get_precision(const char *format, int *i, va_list list);
