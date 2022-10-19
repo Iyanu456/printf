@@ -13,7 +13,7 @@
 #define FL_HASH 8
 #define FL_SPACE 16
 
-/SIZES/
+
 #define S_LONG 2
 #define S_SHORT 1
 
@@ -27,6 +27,7 @@ typedef struct fmt_op fmt_t;
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _isdigit(int c);
+int is_digit(int c);
 
 int handle_print(const char *fmt, int *id, va_list list, char buffer[], int flags, int width, int precision, int size);
 
