@@ -13,7 +13,10 @@
 #define FL_HASH 8
 #define FL_SPACE 16
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4d9d191ac108dacb90661026438288e32c5b2e76
 #define S_LONG 2
 #define S_SHORT 1
 
