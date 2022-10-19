@@ -15,6 +15,12 @@ int handle_print(const char *fmt, int *id, va_list list,  char buffer[], int fla
 	fmt_t fmt_ops[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'i', print_int},
+		{'d', print_int},
+		{'b', print_binary},
+		{'u', print_unsigned},
+		{'o', print_octal},
+		{'x', print_hexadecimal},
 	};
 
 	for (i = 0; fmt_ops[i].fmt != '\0'; i++)

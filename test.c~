@@ -1,0 +1,8 @@
+#include "main.h"
+#include <stdio.h>
+int main(void)
+{
+	char name = 'i';
+	_printf("Hello World to %c ! \n", name);
+	return (0);
+}
