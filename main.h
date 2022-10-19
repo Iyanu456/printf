@@ -22,6 +22,7 @@ struct fmt_op
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+int _isdigit(int c);
 
 int (*get_printf_func)(va_list, char[], int, int, int, int);
 
