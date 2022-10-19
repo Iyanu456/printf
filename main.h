@@ -13,7 +13,6 @@
 #define FL_HASH 8
 #define FL_SPACE 16
 
-/SIZES/
 #define S_LONG 2
 #define S_SHORT 1
 
