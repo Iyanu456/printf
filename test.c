@@ -2,7 +2,11 @@
 #include <stdio.h>
 int main(void)
 {
-	char *name = "Iyanu";
-	_printf("Hello World to %s ! \n", name);
+	char name = 'I';
+	char *newid = "Abraham";
+	char *id = "Iyanu";
+	char *anid = "David";
+	_printf("Hello World! %d \n", name);
+	_printf("Hello %s, Welcome %s \n Do you know %s \n", id, newid, anid);
 	return (0);
 }

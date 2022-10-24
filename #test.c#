@@ -2,7 +2,7 @@
 #include <stdio.h>
 int main(void)
 {
-	char name = 'i';
-	_printf("Hello World to %c ! \n", name);
+	char name = 'I';
+	print("Hello World! %d \n", name);
 	return (0);
 }

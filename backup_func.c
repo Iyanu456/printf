@@ -1,0 +1,54 @@
+#include "main.h"
+int print(const char *format, ...)
+{
+	int i;
+
+	char buffer[1024];
+
+	va_list list;
+
+	va_start(list, format);
+
+	for(i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%' && format[i + 1] == 'd')
+		{
+				_putchar (va_arg(list, int));
+				i++;
+				continue;
+		}
+		else
+			_putchar (format[i]);
+	}
+		return (1);
+}
+
+int prints(const char *format, ...)
+{
+	int i, n = 0;
+
+	char buffer[BUFFER_SIZE];
+
+	va_list list;
+
+	va_start(list, format);
+	const char *str;
+
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%' && format[i + 1] == 's')
+		{
+			str = va_arg(list, char*);
+			while (str[n] != '\0')
+			{
+				_putchar (str[n]);
+			n++;
+			}
+			i++;
+		}
+		else
+			_putchar (format[i]);
+		n = 0;
+	}
+	return (1);
+}
