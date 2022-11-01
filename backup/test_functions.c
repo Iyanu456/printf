@@ -1,7 +1,7 @@
 #include "main.h"
 int _printf(const char *format, ...)
 {
-	int i = 0, len = 0;
+	int i, len = 0;
 
 	char *buffer;
 
@@ -9,20 +9,17 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] ==  '%')
+		if (format[i] == '%')
 		{
+			len = 1;
 			len = handle_print(format, list, buffer, i);
-			if (len == 1)
-			{
-				i += 2;
-				continue;
-			}
 		}
-			else (len == 0)
-			     _putchar(format[i]);
-		i++;
+		else
+		{
+			_putchar(format[i]);
+		}
 	}
 	va_end(list);
 	return (1);

@@ -5,7 +5,7 @@ int print(const char *format, va_list list, char *buffer, int curr_i)
 
 	char curr = va_arg(list, int);
 
-		if (format[i - 1] == '%' && format[i] == 'd')
+	if (format[i + 1] == 'd')
 		{
 			buffer[curr_i];
 			_putchar (curr);
@@ -23,15 +23,17 @@ int prints(const char *format, va_list list, char *buffer, int curr_i)
 
 	char *curr = va_arg(list, char *);
 
-	if (format[curr_i - 1] == '%' && format[curr_i] == 's')
+	if (format[curr_i] == '%')
 		{
-			while (curr[n] != '\0')
+			if (format[curr_i + 1] == 's')
 			{
-				_putchar (curr[n]);
-				count++;
-			n++;
+				while (curr[n] != '\0')
+				{
+					_putchar (curr[n]);
+					n++;
+				}
+				n = 0;
 			}
-			return (1);
 		}
 	else
 	{

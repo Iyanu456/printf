@@ -1,72 +1,40 @@
 #include "main.h"
-
-/**
- * print_char - print char
- * @types: list of arguments
- * @buffer: buffer array
- * @flags: calculates active flags
- * @width: width
- * @precision:precision
- * @size: size
- * Return: number of printed characters
- */
-int print_char(va_list types, char buffer[], int flags, int width, int precision, int size)
+int prints(const char *format, va_list list, char *buffer, int curr_i)
 {
-	char c = va_arg(types, int);
+	int i = curr_i, n = 0, count = 0;
 
-	return (handle_write_char(c, buffer, flags, width, precision, size));
+	char *curr = va_arg(list, char *);
+
+	if (format[curr_i] == '%')
+		{
+			if (format[curr_i + 1] == 's')
+			{
+				while (curr[n] != '\0')
+				{
+					_putchar (curr[n]);
+					n++;
+				}
+				n = 0;
+			}
+		}
+	else
+	{
+		return (0);
+	}
+		n = 0;
+	return (1);
 }
 
-/**
- * prints_string - print string
- * @types: list of arguments                   
- * @buffer: buffer array
- * @flags: calculates active flags
- * @width: width            
- * @precision:precision
- * @size: size
- * Return: number of printed characters
- */
-int print_string(va_list types, char buffer[], int flags, int width, int precision, int size)
+int _printdec(const char *format, va_list list, char *buffer, int curr_i)
 {
-	int length = 0, i;
-	char *str = va_arg(types, char*);
+	int curr = va_arg(list, int);
 
-	UNUSED(buffer);
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(precision);
-	UNUSED(size);
-	if (str == NULL)
+	if (format[curr_i] == '%')
 	{
-		str = "(null)";
-		if (precision >= 6)
-			str = " ";
-	}
-
-	while (str[length] != '\0')
-		length++;
-	if (precision >= 0 && precision < length)
-		length = precision;
-
-	if (width > length)
-	{
-		if (flags & FL_MINUS)
+		if (format[curr_i + 1] == 'd')
 		{
-			write(1, &str[0], length);
-			for (i = width - length; i > 0; i--)
-				write(1, "", 1);
-			return (width);
+			_printint(curr);
 		}
-		else
-		{
-			for (i = width - length; i >  0; i--)
-				write(1, "", 1);
-			write(1, &str[0], length);
-			return (width);
-		}
-
 	}
-
-	return (write(1, str, length));
+	return(1);
 }

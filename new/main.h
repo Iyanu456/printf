@@ -29,8 +29,9 @@ typedef struct type
 } typ_t;
 
 int _putchar(char c);
+int _printint(int n);
 int _printf(const char *format, ...);
-int print(const char *format, va_list list, char *buffer, int curr_i);
+int _printdec(const char *format, va_list list, char *buffer, int curr_i);
 int prints(const char *format, va_list list, char *buffer, int curr_i);
 int _isdigit(int c);
 int is_digit(int c);
