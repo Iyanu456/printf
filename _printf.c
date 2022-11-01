@@ -1,7 +1,7 @@
 #include "main.h"
 int _printf(const char *format, ...)
 {
-	int i = 0, len = 0;
+	int i = 0, len = 0, count = 0;
 
 	va_list list;
 
@@ -12,15 +12,25 @@ int _printf(const char *format, ...)
 		if (format[i] ==  '%')
 		{
 			len = handle_print(format, list, i);
-			if (len == 1)
+			if (len > 0)
 			{
+				count += len;
 				i += 2;
 				continue;
 			}
 		}
-			     _putchar(format[i]);
+		else
+		{
+		if (format[i] == '\n')
+			count += 0;
+		else
+			count++;
+		_putchar(format[i]);
 		i++;
+		}
 	}
-	va_end(list);
-	return (1);
+	if (count < 0)
+		count = 0;
+	printf("count: %d\n", count);
+	return (count);
 }
