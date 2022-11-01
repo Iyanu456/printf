@@ -1,7 +1,7 @@
 #include "main.h"
 int _printf(const char *format, ...)
 {
-	int i = 0, len = 0, count = 0, f_count = 0;
+	int i = 0, len = 0, count = 0;
 
 	va_list list;
 
@@ -21,15 +21,16 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-		if (format[i] == '\0')
-			count -= 4;
+		if (format[i] == '\n')
+			count = count - 3;
+		else
+			count++;
 		_putchar(format[i]);
-		count++;
 		i++;
 		}
 	}
-	f_count = count;
-	va_end(list);
-	printf("count: %d\n", f_count);
+	if (count < 0)
+		count = 0;
+	printf("count: %d\n", count);
 	return (count);
 }
