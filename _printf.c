@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		else
 		{
 		if (format[i] == '\n')
-			count = count - 3;
+			count += 0;
 		else
 			count++;
 		_putchar(format[i]);
