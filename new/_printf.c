@@ -3,8 +3,6 @@ int _printf(const char *format, ...)
 {
 	int i = 0, len = 0;
 
-	char *buffer;
-
 	va_list list;
 
 	va_start(list, format);
@@ -13,7 +11,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] ==  '%')
 		{
-			len = handle_print(format, list, buffer, i);
+			len = handle_print(format, list, i);
 			if (len == 1)
 			{
 				i += 2;

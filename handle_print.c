@@ -8,7 +8,7 @@
  * Return: formatted string
  */
 
-int handle_print(const char *fmt, va_list list,  char *buffer, int curr_i)
+int handle_print(const char *fmt, va_list list, int curr_i)
 {
 	int i;
 
@@ -20,7 +20,7 @@ int handle_print(const char *fmt, va_list list,  char *buffer, int curr_i)
 	for (i = 0; i < 3; i++)
 	{
 		if (fmt[curr_i] == '%' && fmt[curr_i + 1] == type_ops[i].fmt)
-			return (type_ops[i].func(fmt, list, buffer, curr_i));
+			return (type_ops[i].func(fmt, list, curr_i));
 
 		else if (fmt[curr_i + 1] == '\0')
 			return (-1);

@@ -26,4 +26,5 @@ int _printint(int n)
 	if (n/10)
 		_printint(n/10);
 	_putchar(n%10 + '0');
+	return (0);
 }

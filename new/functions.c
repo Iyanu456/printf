@@ -1,7 +1,7 @@
 #include "main.h"
-int prints(const char *format, va_list list, char *buffer, int curr_i)
+int prints(const char *format, va_list list, int curr_i)
 {
-	int i = curr_i, n = 0, count = 0;
+	int n = 0;
 
 	char *curr = va_arg(list, char *);
 
@@ -25,7 +25,7 @@ int prints(const char *format, va_list list, char *buffer, int curr_i)
 	return (1);
 }
 
-int _printdec(const char *format, va_list list, char *buffer, int curr_i)
+int _printdec(const char *format, va_list list, int curr_i)
 {
 	int curr = va_arg(list, int);
 
