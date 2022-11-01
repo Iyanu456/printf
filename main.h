@@ -30,6 +30,7 @@ typedef struct type
 
 int _putchar(char c);
 int _printint(int n);
+int _countint(int n);
 int _printf(const char *format, ...);
 int _printdec(const char *format, va_list list, int curr_i);
 int prints(const char *format, va_list list, int curr_i);

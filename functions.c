@@ -1,7 +1,7 @@
 #include "main.h"
 int prints(const char *format, va_list list, int curr_i)
 {
-	int n = 0;
+	int n = 0, count = 0;
 
 	char *curr = va_arg(list, char *);
 
@@ -12,6 +12,7 @@ int prints(const char *format, va_list list, int curr_i)
 				while (curr[n] != '\0')
 				{
 					_putchar (curr[n]);
+					count++;
 					n++;
 				}
 				n = 0;
@@ -22,19 +23,19 @@ int prints(const char *format, va_list list, int curr_i)
 		return (0);
 	}
 		n = 0;
-	return (1);
+	return (count);
 }
 
 int _printdec(const char *format, va_list list, int curr_i)
 {
-	int curr = va_arg(list, int);
+	int count = 0, curr = va_arg(list, int);
 
 	if (format[curr_i] == '%')
 	{
 		if (format[curr_i + 1] == 'd')
 		{
-			_printint(curr);
+			count = _printint(curr);
 		}
 	}
-	return(1);
+	return (_countint(curr));
 }
