@@ -31,6 +31,5 @@ int _printf(const char *format, ...)
 	}
 	if (count < 0)
 		count = 0;
-	printf("count: %d\n", count);
 	return (count);
 }
