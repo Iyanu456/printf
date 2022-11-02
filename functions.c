@@ -1,11 +1,24 @@
 #include "main.h"
-int printc(const char *format, va_list list, int curr_i)
+/**
+ * printc - prints a char
+ * @format: unused
+ * @list: va_list
+ * @i: integer
+ * Description: prints a char
+ * Return: 1
+ **/
+
+int printc(__attribute__((unused)) const char *format, va_list list, int n)
 {
+	int i = n;
+
 	char curr = va_arg(list, int);
 
 	_putchar (curr);
-	return (1);
+	i = 1;
+	return (i);
 }
+
 int prints(const char *format, va_list list, int curr_i)
 {
 	int n = 0, count = 0;
@@ -13,18 +26,18 @@ int prints(const char *format, va_list list, int curr_i)
 	char *curr = va_arg(list, char *);
 
 	if (format[curr_i] == '%')
+	{
+		if (format[curr_i + 1] == 's')
 		{
-			if (format[curr_i + 1] == 's')
+			while (curr[n] != '\0')
 			{
-				while (curr[n] != '\0')
-				{
-					_putchar (curr[n]);
-					count++;
-					n++;
-				}
-				n = 0;
+				_putchar (curr[n]);
+				count++;
+				n++;
 			}
+			n = 0;
 		}
+	}
 	else
 	{
 		return (0);
