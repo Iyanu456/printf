@@ -17,7 +17,7 @@
  */
 int _countint(int n)
 {
-	int num, count = 0;
+	int num = n, count = 0;
 
 	do
 	{

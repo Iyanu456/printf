@@ -28,14 +28,15 @@ int prints(const char *format, va_list list, int curr_i)
 
 int _printdec(const char *format, va_list list, int curr_i)
 {
-	int count = 0, curr = va_arg(list, int);
+	int len = 0, curr = va_arg(list, int);
 
 	if (format[curr_i] == '%')
 	{
 		if (format[curr_i + 1] == 'd')
 		{
-			count = _printint(curr);
+			_printint(curr);
+			len = _countint(curr);
 		}
 	}
-	return (_countint(curr));
+	return (len);
 }
