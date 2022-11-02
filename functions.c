@@ -1,4 +1,11 @@
 #include "main.h"
+int printc(const char *format, va_list list, int curr_i)
+{
+	char curr = va_arg(list, int);
+
+	_putchar (curr);
+	return (1);
+}
 int prints(const char *format, va_list list, int curr_i)
 {
 	int n = 0, count = 0;

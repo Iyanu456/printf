@@ -4,11 +4,11 @@ int main(void)
 {
 	int i = 10;
 	int j = 20;
-	char *name = "I";
+	char name = 'I';
 	char *newid = "Abraham";
 	char *id = "Iyanu";
 	char *anid = "David";
-	_printf("Hello World! %s \n", name);
+	_printf("Hello World! %c \n", name);
 	_printf("Hello %s, Welcome %s \n Do you know %s he is %d and i am %d \n", id, newid, anid, i, j);
 	_printf("123456 789 ");
 	_printf("\n");
