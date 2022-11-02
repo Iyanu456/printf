@@ -34,6 +34,7 @@ int _countint(int n);
 int _printf(const char *format, ...);
 int _printdec(const char *format, va_list list, int curr_i);
 int prints(const char *format, va_list list, int curr_i);
+int printc(const char *format, va_list list, int curr_i);
 int _isdigit(int c);
 int is_digit(int c);
 int get_func(const char *format, va_list list);

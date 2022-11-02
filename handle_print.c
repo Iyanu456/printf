@@ -13,7 +13,7 @@ int handle_print(const char *fmt, va_list list, int curr_i)
 	int i;
 
 	typ_t type_ops[] = {
-		{'c', prints},
+		{'c', printc},
 		{'s', prints},
 		{'d', _printdec},
 	};
