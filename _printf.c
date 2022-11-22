@@ -7,7 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, len = 0, count = 0;
+	int i, len = 0, count = 0;
 
 	va_list list;
 
@@ -16,15 +16,18 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] ==  '%')
+		if (format[i] == '\0')
+			break;
+
+		if (format[i] == '%')
 		{
 			len = handle_print(format, list, i);
 			if (len > 0)
 			{
 				count += len;
-				i += 2;
+				i++;
 				continue;
 			}
 		}
@@ -32,18 +35,14 @@ int _printf(const char *format, ...)
 		if (format[i] == '\n')
 		{
 			count += 0;
+			_putchar('\n');
 			continue;
 		}
-
-		else
-		{
 			count++;
 			_putchar(format[i]);
-			i++;
 			continue;
-		}
 	}
 	if (count < 0)
 		count = 0;
-	return (count);
+	return (count + 1);
 }

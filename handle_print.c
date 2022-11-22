@@ -20,6 +20,8 @@ int handle_print(const char *fmt, va_list list, int curr_i)
 		{'d', print_dec},
 		{'i', print_dec},
 		{'u', print_unsigned},
+		{'x', print_hex},
+		{'X', print_HEX},
 	};
 	for (i = 0; i < 6; i++)
 	{
