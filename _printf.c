@@ -30,6 +30,8 @@ int _printf(const char *format, ...)
 				i++;
 				continue;
 			}
+			else if (len == -1)
+				return (-1);
 		}
 
 		if (format[i] == '\n')
