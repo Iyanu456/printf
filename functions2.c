@@ -75,3 +75,48 @@ int print_HEX(const char *format, va_list list, int curr_i)
 	free(NUMHEX);
 	return (CONTAME);
 }
+
+/**
+ * print_octa - prints a hexadecimal
+ * @format: format to print hexadecimal
+ * @list: list that contains the hexadecimal
+ * @curr_i: index count
+ * Return: number.
+ */
+int print_octa(const char *format, va_list list, int curr_i)
+{
+	unsigned int num = va_arg(list, unsigned int);
+
+	unsigned int copia;
+
+	char *octa;
+
+	int i, i2 = 0, contame = 0;
+
+	(void)format;
+	(void)curr_i;
+
+	if (num == 0)
+		return (_putchar('0'));
+	for (copia = num; copia != 0; i2++)
+	{
+		copia = copia / 8;
+	}
+	octa = malloc(i2);
+	if (!octa)
+		return (-1);
+	for (i = i2 - 1; i >= 0; i--)
+	{
+		octa[i] = num % 8 + '0';
+		num = num / 8;
+	}
+	for (i = 0; i < i2 && octa[i] == '0'; i++)
+		;
+	for (; i < i2; i++)
+	{
+		_putchar(octa[i]);
+		contame++;
+	}
+	free(octa);
+	return (contame);
+}

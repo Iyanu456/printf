@@ -22,8 +22,9 @@ int handle_print(const char *fmt, va_list list, int curr_i)
 		{'u', print_unsigned},
 		{'x', print_hex},
 		{'X', print_HEX},
+		{'o', print_octa}
 	};
-	for (i = 0; i < 6; i++)
+	for (i = 0; i < 7; i++)
 	{
 		if (fmt[curr_i] == '%' && fmt[curr_i + 1] == '%')
 		{
