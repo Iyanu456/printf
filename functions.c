@@ -26,7 +26,7 @@ int print_string(const char *format, va_list list, int curr_i)
 	char *curr = va_arg(list, char *);
 
 	if (curr == NULL)
-		curr == "(null)";
+		curr = "(null)";
 
 	else if (*curr == '\0')
 		return (-1);
