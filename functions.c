@@ -35,7 +35,7 @@ int print_string(const char *format, va_list list, int curr_i)
 		curr = "(null)";
 
 	if (*curr == '\0')
-		return (-1);
+		return (0);
 
 	if (format[curr_i] == '%')
 	{
