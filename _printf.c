@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 
 		if (format[i] == '\n')
 		{
-			count += 0;
+			count ++;
 			_putchar('\n');
 			continue;
 		}
@@ -44,5 +44,5 @@ int _printf(const char *format, ...)
 	}
 	if (count < 0)
 		count = 0;
-	return (count + 1);
+	return (count);
 }
