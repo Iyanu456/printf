@@ -13,11 +13,12 @@ int handle_print(const char *fmt, va_list list, int curr_i)
 	int i;
 
 	typ_t type_ops[] = {
-		{'c', printc},
-		{'s', prints},
-		{'d', _printdec},
+		{'c', print_char},
+		{'s', print_string},
+		{'d', print_dec},
+		{'u', print_unsigned},
 	};
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 4; i++)
 	{
 		if (fmt[curr_i] == '%' && fmt[curr_i + 1] == type_ops[i].fmt)
 			return (type_ops[i].func(fmt, list, curr_i));

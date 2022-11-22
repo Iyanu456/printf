@@ -32,19 +32,16 @@ int _putchar(char c);
 int _printint(int n);
 int _countint(int n);
 int _printf(const char *format, ...);
-int _printdec(const char *format, va_list list, int curr_i);
-int prints(const char *format, va_list list, int curr_i);
-int printc(const char *format, va_list list, int curr_i);
+int print_dec(const char *format, va_list list, int curr_i);
+int print_string(const char *format, va_list list, int curr_i);
+int print_char(const char *format, va_list list, int curr_i);
+int print_unsigned(const char *format, va_list list, int curr_i);
 int _isdigit(int c);
 int is_digit(int c);
 int get_func(const char *format, va_list list);
 
 int handle_print(const char *fmt, va_list list, int curr_i);
 int handle_write_char(char c, char buffer[], int flags, int width, int precision, int size);
-
-int print_string(va_list types, char buffer[], int flags, int width, int precision, int size);
-int print_char(va_list types, char buffer[], int flags, int width, int precision, int size);
-int print_percent(va_list types, char *buffer, int flags, int width, int precision, int size);
 
 int get_flags(const char *format, int *i);
 int get_precision(const char *format, int *i, va_list list);

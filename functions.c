@@ -8,7 +8,7 @@
  * Return: 1
  **/
 
-int printc(__attribute__((unused)) const char *format, va_list list, int n)
+int print_char(__attribute__((unused)) const char *format, va_list list, int n)
 {
 	int i = n;
 
@@ -19,7 +19,7 @@ int printc(__attribute__((unused)) const char *format, va_list list, int n)
 	return (i);
 }
 
-int prints(const char *format, va_list list, int curr_i)
+int print_string(const char *format, va_list list, int curr_i)
 {
 	int n = 0, count = 0;
 
@@ -46,7 +46,7 @@ int prints(const char *format, va_list list, int curr_i)
 	return (count);
 }
 
-int _printdec(const char *format, va_list list, int curr_i)
+int print_dec(const char *format, va_list list, int curr_i)
 {
 	int len = 0, curr = va_arg(list, int);
 
@@ -59,4 +59,33 @@ int _printdec(const char *format, va_list list, int curr_i)
 		}
 	}
 	return (len);
+}
+
+int print_unsigned(const char *format, va_list list, int curr_i)
+{
+	int divisor = 1, i, resp;
+
+	unsigned int n = va_arg(list, unsigned int);
+
+	if (format[curr_i] == '%')
+	{
+		if (format[curr_i + 1] == 'u')
+		{
+
+			for (i = 0; n / divisor > 9; i++, divisor *= 10)
+				;
+
+			for (; divisor >= 1; n %= divisor, divisor /= 10)
+			{
+				resp = n / divisor;
+				_putchar('0' + resp);
+
+			}
+		}
+
+		return (i +  1);
+	}
+
+	return (0);
+
 }
