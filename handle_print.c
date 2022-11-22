@@ -2,10 +2,12 @@
 #include <stdlib.h>
 
 /**
- * get_printf_func - get printf function
- * @s: strng
+ * handle_print - get printf function
+ * @fmt: string to be formatted
+ * @list: va_list
+ * @curr_i: current index of formatted string
  * Description: searches for appropriate printf function
- * Return: formatted string
+ * Return: string lenth
  */
 
 int handle_print(const char *fmt, va_list list, int curr_i)

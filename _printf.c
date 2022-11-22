@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+ * _printf - printf function
+ * @format: string to be printed
+ * Description: prints a string
+ * Return: string count
+ */
 int _printf(const char *format, ...)
 {
 	int i = 0, len = 0, count = 0;

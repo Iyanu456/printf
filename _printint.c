@@ -3,30 +3,27 @@
 
 
 /**
-
- * _putchar - writes the character c to stdout
-
- * @c: The character to print
-
- *
-
- * Return: On success 1.
-
- * On error, -1 is returned, and errno is set appropriately.
-
+ * _countint -counts the number of characters in an integer
+ * @n: The character to print
+ * Description: counts the number of characters in an integer
+ * Return: the number of characters
  */
 int _countint(int n)
 {
 	int num = n, count = 0;
 
-	do
-	{
+	do {
 		count++;
 		num /= 10;
 	} while (num != 0);
 	return (count);
 }
-
+/**
+ * _printint - prints n integer
+ * @n: integer
+ * Description: prints an integer
+ * Return: integer
+ */
 int _printint(int n)
 {
 	if (n < 0)
@@ -35,9 +32,9 @@ int _printint(int n)
 		n = -n;
 	}
 
-	if (n/10)
-		_printint(n/10);
+	if (n / 10)
+		_printint(n / 10);
 
-	_putchar(n%10 + '0');
+	_putchar(n % 10 + '0');
 	return (0);
 }
