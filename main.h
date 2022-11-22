@@ -34,7 +34,7 @@ int print_dec(const char *format, va_list list, int curr_i);
 int print_string(const char *format, va_list list, int curr_i);
 int print_char(const char *format, va_list list, int curr_i);
 int print_unsigned(const char *format, va_list list, int curr_i);
-int print_hex(const char *format, va_list list, int curr_i );
+int print_hex(const char *format, va_list list, int curr_i);
 int print_HEX(const char *format, va_list, int curr_i);
 
 int integer(int number);
