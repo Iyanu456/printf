@@ -67,7 +67,7 @@ int print_dec(const char *format, va_list list, int curr_i)
 
 	if (format[curr_i] == '%')
 	{
-		if (format[curr_i + 1] == 'd')
+		if (format[curr_i + 1] == 'd' || format[curr_i + 1] == 'i')
 		{
 			_printint(curr);
 			len = _countint(curr);
