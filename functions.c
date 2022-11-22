@@ -25,7 +25,13 @@ int print_string(const char *format, va_list list, int curr_i)
 
 	char *curr = va_arg(list, char *);
 
-	if (format[curr_i] == '%')
+	if (curr == NULL)
+		curr == "(null)";
+
+	else if (*curr == '\0')
+		return (-1);
+
+	else if (format[curr_i] == '%')
 	{
 		if (format[curr_i + 1] == 's')
 		{
@@ -37,10 +43,6 @@ int print_string(const char *format, va_list list, int curr_i)
 			}
 			n = 0;
 		}
-	}
-	else
-	{
-		return (0);
 	}
 		n = 0;
 	return (count);

@@ -36,6 +36,8 @@ int print_dec(const char *format, va_list list, int curr_i);
 int print_string(const char *format, va_list list, int curr_i);
 int print_char(const char *format, va_list list, int curr_i);
 int print_unsigned(const char *format, va_list list, int curr_i);
+
+int integer(int number);
 int _isdigit(int c);
 int is_digit(int c);
 int get_func(const char *format, va_list list);
