@@ -12,7 +12,7 @@ int main(void)
 	_printf("Hello World! %c \n", name);
 	_printf("Hello %s, Welcome %s \n Do you know %s he is %d and i am %d \n", id, newid, anid, i, j);
 	_printf("123456 789 %%\n");
-	_printf("%u is an unsigned int \n", u);
+	_printf("%u is an unsigned int \n");
 	_printf("\n");
 	return (0);
 }
