@@ -34,10 +34,10 @@ int print_string(const char *format, va_list list, int curr_i)
 	if (curr == NULL)
 		curr = "(null)";
 
-	else if (*curr == '\0')
+	if (*curr == '\0')
 		return (-1);
 
-	else if (format[curr_i] == '%')
+	if (format[curr_i] == '%')
 	{
 		if (format[curr_i + 1] == 's')
 		{
