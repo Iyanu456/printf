@@ -35,7 +35,7 @@ int handle_print(const char *fmt, va_list list, int curr_i)
 			return (type_ops[i].func(fmt, list, curr_i));
 
 		else if (fmt[curr_i + 1] == '\0')
-			return (-1);
+			return (0);
 	}
-	return (1);
+	return (0);
 }
