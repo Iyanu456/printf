@@ -21,7 +21,7 @@ int handle_print(const char *fmt, va_list list, int curr_i)
 		{'i', print_dec},
 		{'u', print_unsigned},
 	};
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < 6; i++)
 	{
 		if (fmt[curr_i] == '%' && fmt[curr_i + 1] == '%')
 		{

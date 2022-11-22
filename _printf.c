@@ -28,14 +28,19 @@ int _printf(const char *format, ...)
 				continue;
 			}
 		}
+
+		if (format[i] == '\n')
+		{
+			count += 0;
+			continue;
+		}
+
 		else
 		{
-		if (format[i] == '\n')
-			count += 0;
-		else
 			count++;
-		_putchar(format[i]);
-		i++;
+			_putchar(format[i]);
+			i++;
+			continue;
 		}
 	}
 	if (count < 0)
